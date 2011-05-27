@@ -10,8 +10,14 @@
 #
 # Sample Usage:
 #
-# [Remember: No empty lines between comments and class definition]
 class nrpe_basic {
 
+  class { 'nrpe_basic::packages':
+    stage => 'setup_infra',
+  }
+
+  class { 'nrpe_basic::service':
+    stage => 'deploy_infra',
+  }
 
 }
