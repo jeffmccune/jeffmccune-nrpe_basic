@@ -35,7 +35,6 @@ define nrpe_basic::command(
     default: { $plugdir = $cplugdir }
   }
 
-
   case $ensure {
     "absent":    {
       file{"${nrpe_dir_real}/${name}.cfg":
