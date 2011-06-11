@@ -48,6 +48,7 @@ define nrpe_basic::command(
         group   => '0',
         mode    => '0644',
         content => template("${module_name}/nrpe-config.erb"),
+        require => Class['nrpe_basic::packages'],
         notify  => Class['nrpe_basic::service'],
       }
     }
